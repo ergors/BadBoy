@@ -1,6 +1,7 @@
 # BadBoy 
 
 BadBoy is a discord bot, focus on automate pentest task, such as nmap,sqlmap,whois,etc.
+![alt text](https://media.discordapp.net/attachments/519223258428735511/520234344313257984/badboy.jpg)
 ## Commands
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
