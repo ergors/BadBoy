@@ -1,4 +1,4 @@
-![alt text](https://media.discordapp.net/attachments/519223258428735511/520234344313257984/badboy.jpg)
+![alt text](https://media.discordapp.net/attachments/519223258428735511/520233471621464065/unknown.png)
 
 # BadBoy 
 
