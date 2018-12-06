@@ -1,4 +1,4 @@
-# BadBoy BOT
+# BadBoy 
 
 BadBoy is a discord bot, focus on automate pentest task, such as nmap,sqlmap,whois,etc.
 ## Commands
