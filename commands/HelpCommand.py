@@ -1,5 +1,3 @@
-import asyncio
-
 import discord
 
 from commands.framework.CommandBase import CommandBase
