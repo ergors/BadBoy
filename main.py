@@ -9,7 +9,7 @@ TOKEN = ''  # Token privado
 
 client = discord.Client()
 command_center = CommandCenter(client)
-
+prefix = '!'
 
 def load_commands():
     command_center.add_command(None)
@@ -21,14 +21,14 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.startswith("!hello"):
+    if message.content.startswith(prefix + "hello"):
         msg = "Hello {0.author.mention} ``test`` **a** :poop:".format(message)
         await client.send_message(message.channel, msg)
 
-    if message.content.startswith('!'):
+    if message.content.startswith(prefix):
         command_center.process_line(message, message.content)
 
-    if message.content.startswith("!help"):
+    if message.content.startswith(prefix + "help"):
         embed = discord.Embed(
             title="Help Page",
             description="Prefix: **!**",
