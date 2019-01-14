@@ -20,11 +20,18 @@ async def on_message(message):
     # we do not want the bot to reply to itself
     if message.author == client.user:
         return
-
+    
+    # ignore message if don't have the prefix !
+    if !message.content.startswith(prefix):
+        return    
+    else: 
+       print(message.author)
+       print(message.content)
+       print('')
     if message.content.startswith(prefix + "hello"):
         msg = "Hello {0.author.mention} ``test`` **a** :poop:".format(message)
         await client.send_message(message.channel, msg)
-
+    
     if message.content.startswith(prefix):
         command_center.process_line(message, message.content)
 
@@ -60,7 +67,7 @@ async def on_ready():
         print(server)
     print('------')
     await client.change_presence(game=discord.Game(name='Type !help for help page'))
-
+    print('LOGS:\n')
 
 load_commands()
 client.run(TOKEN)
