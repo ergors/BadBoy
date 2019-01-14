@@ -3,16 +3,18 @@
 
 # Funcionando em Python 3.6
 import discord
+
+from commands.HelpCommand import HelpCommand
 from commands.framework.CommandCenter import CommandCenter
 
-TOKEN = ''  # Token privado
+TOKEN = 'NTE5MTk3ODI2NTY0MDk2MDMw.Dwhy1w.SI3U2z9Y5tX35HeT20HYJFJZ5nE'  # Token privado
 
 client = discord.Client()
 command_center = CommandCenter(client)
 
 
 def load_commands():
-    command_center.add_command(None)
+    command_center.add_command(HelpCommand())
 
 
 @client.event
