@@ -31,7 +31,7 @@ async def on_message(message):
        print(message.content)
        print('')
     if message.content.startswith(prefix):
-        command_center.process_line(message, message.content)
+        await command_center.process_line(message, message.content)
         
 @client.event
 async def on_ready():
