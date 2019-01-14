@@ -3,16 +3,21 @@
 # BadBoy Bot
 # Funcionando em Python 3.6
 import discord
+import os
 
 from commands.HelpCommand import HelpCommand
 from commands.WhoisCommand import WhoisCommand
 from commands.framework.CommandCenter import CommandCenter
+from dotenv import load_dotenv
 
-TOKEN = ''  # Token privado
+load_dotenv()  # Carrega as configurações do arquivo .env. Caso você não o possua, copie-o do arquivo .env.example
+
+TOKEN = os.getenv('PRIVATE_TOKEN')
 
 client = discord.Client()
 command_center = CommandCenter(client)
 prefix = '!'
+
 
 def load_commands():
     command_center.add_command(HelpCommand())
@@ -24,17 +29,18 @@ async def on_message(message):
     # we do not want the bot to reply to itself
     if message.author == client.user:
         return
-    
+
     # ignore message if don't have the prefix !
     if not message.content.startswith(prefix):
-        return    
-    else: 
-       print(message.author)
-       print(message.content)
-       print('')
+        return
+    else:
+        print(message.author)
+        print(message.content)
+        print('')
     if message.content.startswith(prefix):
         await command_center.process_line(message, message.content)
-        
+
+
 @client.event
 async def on_ready():
     print('------')
@@ -49,6 +55,7 @@ async def on_ready():
     print('------')
     await client.change_presence(game=discord.Game(name='Type !help for help page'))
     print('LOGS:\n')
+
 
 load_commands()
 client.run(TOKEN)
