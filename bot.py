@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+# -*- encoding: utf-8 -*_
 
 #Funcionando em Python 3.6
 import discord
