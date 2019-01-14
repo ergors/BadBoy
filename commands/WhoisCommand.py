@@ -25,3 +25,4 @@ class WhoisCommand(CommandBase):
         if not args:
             await show_command_help(client, message, self.alias_used)
             return
+
