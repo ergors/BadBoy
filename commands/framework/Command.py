@@ -16,5 +16,6 @@ class Command(object):
     def get_aliases(self):
         """ getter para os aliases do comando """
 
+    @abstractmethod
     def set_alias_used(self, alias):
         """ setter para o alias usado """
