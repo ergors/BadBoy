@@ -6,10 +6,9 @@ from commands.framework.CommandBase import CommandBase
 class HelpCommand(CommandBase):
 
     def __init__(self):
-        super(HelpCommand, self).__init__('teste')
+        super(HelpCommand, self).__init__('help')
 
     async def execute(self, client, message, args):
-        print('executing teste command')
         embed = discord.Embed(
             title="Help Page",
             description="Prefix: **!**",

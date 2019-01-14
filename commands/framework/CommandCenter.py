@@ -9,7 +9,6 @@ class CommandCenter(object):
         self.discord_client = discord_client
 
     async def process_line(self, message, line):
-        print('processing line {}'.format(line))
         command_name = line[1:]
         args = None
 
