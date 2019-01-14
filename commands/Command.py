@@ -9,7 +9,7 @@ class Command(object):
         """ setter para o command center """
 
     @abstractmethod
-    def execute(self, args):
+    def execute(self, message, args):
         """ executor de comandos """
 
     @abstractmethod
