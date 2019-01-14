@@ -19,3 +19,8 @@ class CommandCenter(object):
         command = self.commands[command_name.lower()]
         if command is not None:
             command.execute(message, args)
+
+    def add_command(self, command):
+        for alias in command.get_aliases():
+            self.commands[alias.lower()] = command
+            command.set_command_center(self)
