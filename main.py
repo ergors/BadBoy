@@ -49,9 +49,15 @@ async def on_message(message):
 
 @client.event
 async def on_ready():
+    print('------')
+    print('BadBoy')
     print('Logged in as')
     print(client.user.name)
     print(client.user.id)
+    print(discord.__version__)
+    print('Servers connected to:')
+    for server in client.servers:
+        print(server)
     print('------')
     await client.change_presence(game=discord.Game(name='Type !help for help page'))
 
