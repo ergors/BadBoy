@@ -5,7 +5,7 @@
 import discord
 from commands.framework.CommandCenter import CommandCenter
 
-TOKEN = ''  # Token privado
+TOKEN = 'NTE5MTk3ODI2NTY0MDk2MDMw.Dwhy1w.SI3U2z9Y5tX35HeT20HYJFJZ5nE'  # Token privado
 
 client = discord.Client()
 command_center = CommandCenter(client)
@@ -22,7 +22,7 @@ async def on_message(message):
         return
     
     # ignore message if don't have the prefix !
-    if !message.content.startswith(prefix):
+    if not message.content.startswith(prefix):
         return    
     else: 
        print(message.author)
