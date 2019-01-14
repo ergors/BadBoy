@@ -1,4 +1,4 @@
-from commands import Command
+from commands.framework import Command
 
 
 class CommandBase(Command):

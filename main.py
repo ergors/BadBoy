@@ -1,12 +1,19 @@
 #!/usr/bin/python3
 # -*- encoding: utf-8 -*_
 
-#Funcionando em Python 3.6
+# Funcionando em Python 3.6
 import discord
+from commands.framework.CommandCenter import CommandCenter
 
-TOKEN = '' #Token privado
+TOKEN = ''  # Token privado
 
 client = discord.Client()
+command_center = CommandCenter(client)
+
+
+def load_commands():
+    command_center.add_command(None)
+
 
 @client.event
 async def on_message(message):
@@ -17,14 +24,18 @@ async def on_message(message):
     if message.content.startswith("!hello"):
         msg = "Hello {0.author.mention} ``test`` **a** :poop:".format(message)
         await client.send_message(message.channel, msg)
-    
+
+    if message.content.startswith('!'):
+        command_center.process_line(message, message.content)
+
     if message.content.startswith("!help"):
         embed = discord.Embed(
             title="Help Page",
-            description="Prefix: **!**", 
+            description="Prefix: **!**",
             color=discord.Colour.red()
         )
-        embed.set_thumbnail(url="https://media.discordapp.net/attachments/519223258428735511/520234344313257984/badboy.jpg")
+        embed.set_thumbnail(
+            url="https://media.discordapp.net/attachments/519223258428735511/520234344313257984/badboy.jpg")
         embed.add_field(name="!whois", value="Verify informations abou the site.", inline=False)
         embed.add_field(name="!geoip", value="GeoIp lookup.", inline=False)
         embed.add_field(name="!nmap", value="Simple port scan an ip address.", inline=False)
@@ -35,6 +46,7 @@ async def on_message(message):
         embed.set_footer(text="Type !help [command] for more info about command")
         await client.send_message(message.channel, embed=embed)
 
+
 @client.event
 async def on_ready():
     print('Logged in as')
@@ -43,4 +55,6 @@ async def on_ready():
     print('------')
     await client.change_presence(game=discord.Game(name='Type !help for help page'))
 
+
+load_commands()
 client.run(TOKEN)
