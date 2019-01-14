@@ -1,7 +1,9 @@
+from abc import ABCMeta
+
 from commands.framework.Command import Command
 
 
-class CommandBase(Command):
+class CommandBase(Command, metaclass=ABCMeta):
     aliases = list()
     alias_used = str()
     command_center = None
