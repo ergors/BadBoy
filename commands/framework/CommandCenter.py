@@ -18,6 +18,7 @@ class CommandCenter(object):
 
         if command_name.lower() in self.commands:
             command = self.commands[command_name.lower()]
+            command.set_alias_used(command_name)
             await command.execute(self.discord_client, message, args)
 
     def add_command(self, command):
