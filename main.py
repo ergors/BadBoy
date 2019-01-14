@@ -8,7 +8,7 @@ from commands.HelpCommand import HelpCommand
 from commands.WhoisCommand import WhoisCommand
 from commands.framework.CommandCenter import CommandCenter
 
-TOKEN = 'NTE5MTk3ODI2NTY0MDk2MDMw.Dwhy1w.SI3U2z9Y5tX35HeT20HYJFJZ5nE'  # Token privado
+TOKEN = ''  # Token privado
 
 client = discord.Client()
 command_center = CommandCenter(client)
