@@ -35,7 +35,7 @@ async def on_message(message):
         await client.send_message(message.channel, msg)
     
     if message.content.startswith(prefix):
-        command_center.process_line(message, message.content)
+        await command_center.process_line(message, message.content)
 
     if message.content.startswith(prefix + "help"):
         embed = discord.Embed(

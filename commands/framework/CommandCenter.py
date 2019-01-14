@@ -8,7 +8,7 @@ class CommandCenter(object):
     def __init__(self, discord_client):
         self.discord_client = discord_client
 
-    def process_line(self, message, line):
+    async def process_line(self, message, line):
         print('processing line {}'.format(line))
         command_name = line[1:]
         args = None
@@ -19,7 +19,7 @@ class CommandCenter(object):
 
         if command_name.lower() in self.commands:
             command = self.commands[command_name.lower()]
-            command.execute(self.discord_client, message, args)
+            await command.execute(self.discord_client, message, args)
 
     def add_command(self, command):
         for alias in command.get_aliases():

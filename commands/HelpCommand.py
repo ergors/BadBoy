@@ -8,7 +8,7 @@ class HelpCommand(CommandBase):
     def __init__(self):
         super(HelpCommand, self).__init__('teste')
 
-    def execute(self, client, message, args):
+    async def execute(self, client, message, args):
         print('executing teste command')
         embed = discord.Embed(
             title="Help Page",
@@ -25,4 +25,4 @@ class HelpCommand(CommandBase):
         embed.add_field(name="!exploitdb", value="Search exploits in ExploitDB", inline=False)
         embed.add_field(name="!sites", value="Verify sites in a host.", inline=False)
         embed.set_footer(text="Type !help [command] for more info about command")
-        client.send_message(message.channel, embed=embed)
+        await client.send_message(message.channel, embed=embed)
