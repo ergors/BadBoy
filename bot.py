@@ -2,7 +2,7 @@
 #Funcionando em Python 3.6
 import discord
 
-TOKEN = 'NTE5MTk3ODI2NTY0MDk2MDMw.Dwhy1w.SI3U2z9Y5tX35HeT20HYJFJZ5nE' #Token privado
+TOKEN = '' #Token privado
 
 client = discord.Client()
 
