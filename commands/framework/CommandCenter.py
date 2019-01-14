@@ -17,8 +17,9 @@ class CommandCenter(object):
             command_name = command_name.split(' ')[0]
             args = line[line.index(' ') + 1:].split(' ')
 
-        command = self.commands[command_name.lower()]
-        command.execute(self.discord_client, message, args)
+        if command_name.lower() in self.commands:
+            command = self.commands[command_name.lower()]
+            command.execute(self.discord_client, message, args)
 
     def add_command(self, command):
         for alias in command.get_aliases():
