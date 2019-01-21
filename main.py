@@ -10,6 +10,7 @@ from commands.HelpCommand import HelpCommand
 from commands.WhoisCommand import WhoisCommand
 from commands.NmapCommand import NmapCommand
 from commands.framework.CommandCenter import CommandCenter
+from commands.GeoCommand import GeoCommand
 from dotenv import load_dotenv
 
 from commands.leakz.HaveIBeenPwnedCommand import HaveIBeenPwnedCommand
@@ -28,6 +29,7 @@ def load_commands():
     command_center.add_command(WhoisCommand())
     command_center.add_command(NmapCommand())
     command_center.add_command(HaveIBeenPwnedCommand())
+    command_center.add_command(GeoCommand())
 
 
 @client.event
