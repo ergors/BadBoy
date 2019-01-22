@@ -51,18 +51,25 @@ async def on_message(message):
 
 @client.event
 async def on_ready():
-    print('------')
-    print('BadBoy')
-    print('Logged in as')
-    print(client.user.name)
-    print(client.user.id)
-    print(discord.__version__)
-    print('Servers connected to:')
+    print('\033[91m')
+    print('  /$$$$$$$                  /$$ /$$$$$$$                      ')
+    print(' | $$__  $$                | $$| $$__  $$                     ')
+    print(' | $$  \ $$  /$$$$$$   /$$$$$$$| $$  \ $$  /$$$$$$  /$$   /$$ ')
+    print(' | $$$$$$$  |____  $$ /$$__  $$| $$$$$$$  /$$__  $$| $$  | $$ ')
+    print(' | $$__  $$  /$$$$$$$| $$  | $$| $$__  $$| $$  \ $$| $$  | $$ ')
+    print(' | $$  \ $$ /$$__  $$| $$  | $$| $$  \ $$| $$  | $$| $$  | $$ ')
+    print(' | $$$$$$$/|  $$$$$$$|  $$$$$$$| $$$$$$$/|  $$$$$$/|  $$$$$$$ ')
+    print(' |_______/  \_______/ \_______/|_______/  \______/  \____  $$ ')
+    print('                                                    /$$  | $$ ')
+    print('                                                   |  $$$$$$/ ')
+    print('                                                    \______/  ')
+    x = discord.__version__
+    print('\033[0mVersion: \033[91m{}'.format(x))
+    print('\033[0mServers connected to:')
     for server in client.servers:
         print(server)
-    print('------')
     await client.change_presence(game=discord.Game(name='Type !help for help page'))
-    print('LOGS:\n')
+    print('\nLOGS:\n')
 
 
 load_commands()
