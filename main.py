@@ -7,12 +7,12 @@ import os
 
 #Load Commands
 from commands.HelpCommand import HelpCommand
+from commands.ShodanCommand import ShodanCommand
 from commands.WhoisCommand import WhoisCommand
 from commands.NmapCommand import NmapCommand
 from commands.framework.CommandCenter import CommandCenter
 from commands.GeoCommand import GeoCommand
 from dotenv import load_dotenv
-
 from commands.leakz.HaveIBeenPwnedCommand import HaveIBeenPwnedCommand
 
 load_dotenv()  # Carrega as configurações do arquivo .env. Caso você não o possua, copie-o do arquivo .env.example
@@ -25,6 +25,7 @@ prefix = '!'
 
 
 def load_commands():
+    command_center.add_command(ShodanCommand())
     command_center.add_command(HelpCommand())
     command_center.add_command(WhoisCommand())
     command_center.add_command(NmapCommand())
