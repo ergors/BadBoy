@@ -7,13 +7,18 @@ import os
 
 #Load Commands
 from commands.HelpCommand import HelpCommand
+from commands.PingCommand import PingCommand
 from commands.ShodanCommand import ShodanCommand
 from commands.WhoisCommand import WhoisCommand
 from commands.NmapCommand import NmapCommand
-from commands.framework.CommandCenter import CommandCenter
-from commands.GeoCommand import GeoCommand
-from dotenv import load_dotenv
 from commands.leakz.HaveIBeenPwnedCommand import HaveIBeenPwnedCommand
+from commands.GeoCommand import GeoCommand
+from commands.ExploitDbCommand import ExploitDbCommand
+from commands.ReverseIpCommand import ReverseIpCommand
+from commands.SqliCommand import SqliCommand
+#Configs
+from commands.framework.CommandCenter import CommandCenter
+from dotenv import load_dotenv
 
 load_dotenv()  # Carrega as configurações do arquivo .env. Caso você não o possua, copie-o do arquivo .env.example
 
@@ -26,11 +31,15 @@ prefix = '!'
 
 def load_commands():
     command_center.add_command(ShodanCommand())
+    command_center.add_command(PingCommand())
+    command_center.add_command(SqliCommand())
+    command_center.add_command(ReverseIpCommand())
     command_center.add_command(HelpCommand())
     command_center.add_command(WhoisCommand())
     command_center.add_command(NmapCommand())
     command_center.add_command(HaveIBeenPwnedCommand())
-    command_center.add_command(GeoCommand())
+    command_center.add_command(GeoCommand()) 
+    command_center.add_command(ExploitDbCommand())
 
 
 @client.event
