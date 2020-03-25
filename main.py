@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- encoding: utf-8 -*_
 # BadBoy Bot
-# Funcionando em Python 3.6 
+# Funcionando em Python 3.6 somente !
 # Discord version == 0.16.12
 import discord
 import os
