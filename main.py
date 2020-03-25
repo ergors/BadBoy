@@ -74,8 +74,8 @@ async def on_ready():
     print('                                                    /$$  | $$ ')
     print('                                                   |  $$$$$$/ ')
     print('                                                    \______/  ')
-    x = discord.__version__
-    print('\033[0mVersion: \033[91m{}'.format(x))
+    version = discord.__version__
+    print('\033[0mVersion: \033[91m{}'.format(version))
     print('\033[0mServers connected to:')
     for server in client.servers:
         print(server)
