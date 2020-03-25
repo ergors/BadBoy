@@ -12,7 +12,7 @@ from commands.PingCommand import PingCommand
 from commands.ShodanCommand import ShodanCommand
 from commands.WhoisCommand import WhoisCommand
 from commands.NmapCommand import NmapCommand
-from commands.leakz.HaveIBeenPwnedCommand import HaveIBeenPwnedCommand
+from commands.HaveIBeenPwnedCommand import HaveIBeenPwnedCommand
 from commands.GeoCommand import GeoCommand
 from commands.ExploitDbCommand import ExploitDbCommand
 from commands.ReverseIpCommand import ReverseIpCommand
